@@ -1,0 +1,23 @@
+<dom-module id="child-element">
+  <template>
+    <h1>Child</h1>
+    <input type="text" value="{{data::input}}" />
+    <p>{{data}}</p>
+  </template>
+  <script>
+    Polymer({
+      is: "child-element",
+      properties: {
+        data: {
+          type: String,
+          notify: true // this will enable bidirectional binding and event listener below
+        }
+      },
+      ready: function () {
+        this.addEventListener('data-changed', function (e) {
+          console.log(e.detail.value);
+        });
+      }
+    })
+  </script>
+</dom-module>
