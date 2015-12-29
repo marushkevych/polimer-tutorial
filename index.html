@@ -5,9 +5,15 @@
   <title></title>
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="bower_components/polymer/polymer.html"/>
-  <link rel="import" href="my-card.html"/>
+  <link rel="import" href="my-button.html"/>
 </head>
 <body>
-  <my-card></my-card>
+  <button id="btn1" is="my-button">Hello World</button>
+  <button id="btn2">Hello World</button>
 </body>
+<script>
+  btn1.addEventListener('click', function(){
+    console.log('btn clicked')
+  })
+</script>
 </html>
